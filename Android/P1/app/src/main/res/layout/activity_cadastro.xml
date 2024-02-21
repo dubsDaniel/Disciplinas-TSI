@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Cadastro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/descreva_o_carro_desejado"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/ed_marca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/marca"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_modelo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/modelo"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_ano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ano"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_cor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/cor"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/valor"
+            android:textAlignment="center" />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:id="@+id/rb_interesse">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/voc_est_interessado_em"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+            <RadioButton
+                android:id="@+id/rb_queroVender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vender_este_veiculo"
+                android:checked="false"/>
+            <RadioButton
+                android:id="@+id/rb_queroComprar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comprar_este_veiculo"
+                android:checked="false"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/qual_o_tipo_do_veiculo"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@+id/rb_tipoVeiculo">
+            <RadioButton
+                android:id="@+id/rb_moto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/moto"
+                android:checked="false"/>
+            <RadioButton
+                android:id="@+id/rb_carro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carro"
+                android:checked="false"/>
+            <RadioButton
+                android:id="@+id/rb_caminhao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/caminh_o"
+                android:checked="false"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cadastre_seu_contato"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/ed_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nome"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefone"
+            android:textAlignment="center" />
+        <EditText
+            android:id="@+id/ed_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/e_mail"
+            android:textAlignment="center" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="salvar"
+            android:text="Salvar" />
+    </LinearLayout>
+</LinearLayout>

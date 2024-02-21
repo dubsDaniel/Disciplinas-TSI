@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">P2_DanielLCabrera_2096072</string>
+    <string name="veiculos">Veiculos</string>
+    <string name="cadastro_pesquisa">Cadastro / Pesquisa</string>
+    <string name="locadores">Locadores</string>
+    <string name="locacao">Locação</string>
+    <string name="ano">Ano</string>
+    <string name="cor">Cor</string>
+    <string name="modelo">Modelo</string>
+    <string name="placa">Placa</string>
+    <string name="nome_completo">Nome completo</string>
+    <string name="cpf">CPF</string>
+    <string name="cep">CEP</string>
+    <string name="data_inicio">Data inicio</string>
+    <string name="data_final">Data final</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="deletar">Deletar</string>
+</resources>

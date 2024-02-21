@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">P1_DanielLCabrera_2096072</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="ano">Ano</string>
+    <string name="cor">Cor</string>
+    <string name="valor">Valor</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="descreva_o_carro_desejado">Descreva o carro desejado:</string>
+    <string name="voc_est_interessado_em">Você está interessado em:</string>
+    <string name="cadastre_seu_contato">Cadastre seu contato:</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="remover">Remover</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="carros_venda">Carros à venda</string>
+    <string name="interessados_em_comprar">Interessados em comprar</string>
+    <string name="comprar_este_veiculo">Comprar este veiculo?</string>
+    <string name="vender_este_veiculo">Vender este veiculo?</string>
+    <string name="todos">Todos</string>
+    <string name="a_partir_de">A partir de:</string>
+    <string name="de_at">De até:</string>
+    <string name="carros_desejados">Carros desejados</string>
+    <string name="qual_o_tipo_do_veiculo">Qual o tipo do veiculo?</string>
+    <string name="moto">Moto</string>
+    <string name="carro">Carro</string>
+    <string name="caminh_o">Caminhão</string>
+</resources>

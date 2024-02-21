@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".listaCompra">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginRight="5sp"
+            android:layout_marginLeft="5sp"
+            android:text="@string/editar_lista"
+            android:textSize="20sp"
+            android:onClick="editar"/>
+
+        <Button
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginRight="5sp"
+            android:layout_marginLeft="5sp"
+            android:backgroundTint="@color/red"
+            android:text="@string/excluir_lista"
+            android:textSize="20sp"
+            android:onClick="excluir"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="4">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="right">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:hint="@string/nomeie_a_sua_lista"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_marginRight="5sp"
+                android:id="@+id/ed_nomeLista"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/prioridade"
+                android:textAlignment="center"
+                android:layout_marginRight="5sp"
+                android:id="@+id/ed_prioridade"/>
+
+        </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="0sp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_weight="2">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5sp"
+            android:text="+"
+            android:textSize="60sp"
+            android:gravity="bottom"
+            android:onClick="confirmar"/>
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

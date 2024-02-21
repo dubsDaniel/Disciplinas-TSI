@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P3_DanielLCabrera_2096072</string>
+    <string name="excluir">Delete</string>
+    <string name="editar">Edit</string>
+    <string name="nome_do_setor">Sector Name</string>
+    <string name="qual_setor">Which sector does this product belong to?</string>
+    <string name="valor_do_produto">Product Value</string>
+    <string name="desc_produto">Product Description</string>
+    <string name="cadastrar_setor">Register Sector</string>
+    <string name="minhas_listas_de_compra">My Shopping Lists</string>
+    <string name="cadastrar_produto">Register Product</string>
+    <string name="nomeie_a_sua_lista">Name of your List</string>
+    <string name="excluir_lista">Delete List</string>
+    <string name="editar_lista">Edit List</string>
+    <string name="prioridade">Priority</string>
+    <string name="comprado">Purchased</string>
+    <string name="x">X</string>
+    <string name="remomeie_sua_lista">Rename your List</string>
+    <string name="filtre_por_setor">Filter by sector</string>
+    <string name="quantidade">Quantity</string>
+</resources>

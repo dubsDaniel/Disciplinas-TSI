@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P2_DanielLCabrera_2096072</string>
+    <string name="veiculos">Vehicles</string>
+    <string name="cadastro_pesquisa">Registration / Search</string>
+    <string name="locadores">Lessors</string>
+    <string name="locacao">Rental</string>
+    <string name="ano">Year</string>
+    <string name="cor">Color</string>
+    <string name="modelo">Model</string>
+    <string name="placa">License Plate</string>
+    <string name="nome_completo">Full Name</string>
+    <string name="cpf">SSN</string>
+    <string name="cep">Zipcode</string>
+    <string name="data_inicio">Start Date</string>
+    <string name="data_final">End Date</string>
+    <string name="confirmar">Confirm</string>
+    <string name="cancelar">Cancel</string>
+    <string name="deletar">Delete</string>
+</resources>

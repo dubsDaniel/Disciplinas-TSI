@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P1_DanielLCabrera_2096072</string>
+    <string name="marca">Brand</string>
+    <string name="modelo">Model</string>
+    <string name="ano">Year</string>
+    <string name="cor">Color</string>
+    <string name="valor">Price</string>
+    <string name="nome">Name</string>
+    <string name="telefone">Phone</string>
+    <string name="e_mail">E-mail</string>
+    <string name="descreva_o_carro_desejado">Describe your desired car:</string>
+    <string name="voc_est_interessado_em">Are you interested in:</string>
+    <string name="cadastre_seu_contato">Register your contact:</string>
+    <string name="adicionar">Add</string>
+    <string name="remover">Remove</string>
+    <string name="filtrar">Filter</string>
+    <string name="carros_venda">Cars for Sale</string>
+    <string name="interessados_em_comprar">Interested in buying:</string>
+    <string name="comprar_este_veiculo">Buy this vehicle?</string>
+    <string name="vender_este_veiculo">Sell ​​this vehicle?</string>
+    <string name="todos">All</string>
+    <string name="a_partir_de">Starting from</string>
+    <string name="de_at">From to</string>
+    <string name="carros_desejados">Desired cars</string>
+    <string name="qual_o_tipo_do_veiculo">What type of vehicle</string>
+    <string name="moto">Motorcycle</string>
+    <string name="carro">Car</string>
+    <string name="caminh_o">Truck</string>
+</resources>

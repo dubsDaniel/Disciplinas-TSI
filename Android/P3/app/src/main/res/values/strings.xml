@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">P3_DanielLCabrera_2096072</string>
+    <string name="excluir">Excluir</string>
+    <string name="editar">Editar</string>
+    <string name="nome_do_setor">Nome do Setor</string>
+    <string name="qual_setor">Este produto pertence a qual setor?</string>
+    <string name="valor_do_produto">Valor do Produto</string>
+    <string name="desc_produto">Descrição do Produto</string>
+    <string name="cadastrar_setor">Cadastrar Setor</string>
+    <string name="minhas_listas_de_compra">Minhas Listas de Compra</string>
+    <string name="cadastrar_produto">Cadastrar Produto</string>
+    <string name="nomeie_a_sua_lista">Nomeie a sua Lista</string>
+    <string name="excluir_lista">Excluir Lista</string>
+    <string name="editar_lista">Editar Lista</string>
+    <string name="prioridade">Prioridade</string>
+    <string name="comprado">Comprado!</string>
+    <string name="x">X</string>
+    <string name="remomeie_sua_lista">Remomeie sua Lista</string>
+    <string name="filtre_por_setor">Filtre por setor</string>
+    <string name="quantidade">Quantidade</string>
+</resources>
