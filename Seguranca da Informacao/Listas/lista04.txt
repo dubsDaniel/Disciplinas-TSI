@@ -1,0 +1,63 @@
+1. Qual é a principal função de um firewall em uma rede de computadores?
+R.: C) Proteger a rede contra acessos não autorizados.
+
+2. O que é uma tabela no iptables ou no nftables?
+R.: A) Um conjunto de regras de firewall.
+
+3. Qual é a principal diferença entre o ufw e o iptables no Linux?
+R.: C) O ufw é mais fácil de configurar e usar, enquanto o iptables é mais avançado e complexo.
+
+4. O que é o pfSense?
+R.: D) Uma distribuição de firewall baseada em FreeBSD.
+
+5. Qual é a finalidade do recurso de Network Address Translation (NAT) em um firewall?
+R.: D) Traduzir endereços IP privados para endereços IP públicos.
+
+6. Qual é o objetivo do comando "iptables -A INPUT -j LOG"?
+R.: A) Registrar todas as conexões de entrada.
+
+7. O que é uma regra de firewall "stateful"?
+R.: D) Uma regra que rastreia o estado das conexões de rede.
+
+8. O que é uma regra de firewall "stateless"?
+R.: D) Uma regra que não rastreia o estado das conexões de rede.
+
+
+
+9. Explique com suas palavras o que as seguintes regras fazem:
+A: iptables -t filter -A INPUT -s 192.168.0.0/255.255.255.0 -i eth1 -j ACCEPT
+R.: Incluí uma regra na "chain" INPUT da tabela filter, que diz que todos os pacotes provindos da interface eth1 da rede 192.168.0.0/255.255.255.0, serão aceitos. 
+
+B: iptables -I FORWARD -s 192.168.0.0/255.255.255.0 -d www.facebook.com -j DROP
+R.: Incluí uma regra na "chain" FORWARD, que diz que qualquer pacote com oridem na rede 192.168.0.0/255.255.255.0 com destino para o endereço www.facebook.com seja descartado.
+
+C: iptables -A OUTPUT -o lo -j ACCEPT
+R.: Incluí uma regra na "chain" OUTPUT, que diz que qualquer pacote provindo da interface do localhost deve ser permitido.
+
+D: iptables -D FORWARD -s 192.168.13.0/24 -d www.google.com -j REJECT
+R.: Remove uma regra da "chain" FORWARD, que estava rejeitando pacotes para de origem da rede 192.168.13.0/24 com destino ao www.google.com.
+
+E: iptables -t nat -A OUTPUT -p tcp -d 10.0.0.10 -j DNAT −−to 10.0.0.1
+R.: Incluí uma regra na "chain" OUTPUT da tabela nat, que diz que os pacotes enviados pelo protocolo tcp para o destino 10.0.0.10 deve ser redirecionado para o endereço 10.0.0.1.
+
+F: iptables -t nat -A PREROUTING -i eth0 -j DNAT −−to 172.20.0.1
+R.: Incluí uma regra na "chain" PREROUTING da tabela nat, que diz que os pacotes que chegarem pela interface "eth0 " deve ser redirecionado para o endereço 172.20.0.1.
+
+
+
+10. Crie Regras:
+A: bloqueando o envio de mensagem ICMP Echo (ping) para o seu computador:
+R.: iptables -A INPUT -p icmp -j DROP
+
+B: bloqueando todas as conexões de SSH vindas do exterior para o seu computador:
+R.: iptables -A INPUT -i eth0 -p tcp --dport 22 -j DROP
+
+C: bloqueando o acesso aos site: facebook.com: 
+R.: iptables --insert INPUT 1 --protocol tcp –s 192.168.0.0/255.255.255.0 -d www.facebook.com --jump DROP
+
+
+
+11.  Quais as diferenças entre os firewalls UFW e nftables?
+R.: Uma diferença característica desses firewalls, é que o nftables é mais complicado, devido a lidar com algumas configurações de mais "baixo nível", ou seja,
+é um pouco mais complexo, porém, a gama de configurações é maior, já o UFW, tem uma interface mais simples para configurar, porém, por este motivo não permite
+tantas configurações igual o nftables.

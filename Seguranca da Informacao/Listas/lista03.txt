@@ -1,0 +1,32 @@
+1. _____________ oferece um mecanismo para obter quatro objetivos em segurança: confidencialidade, integridade, autenticação e não repúdio.
+R.: c) Criptografia
+
+2. Uma função de hash forte é projetada de modo que uma mensagem não possa ser forjada, resultando no mesmo hash de uma mensagem legítima.
+R.: a) Verdadeiro
+
+3. O ato de misturar texto claro para gerar texto cifrado é conhecido como ____________.
+R.: b) Encriptação
+
+4. Um algoritmo usado para fins criptográficos é conhecido como um(a) ______________.
+R.: d) Cifra
+
+5. Cifras de encriptação podem ser de duas categorias gerais: chave simétrica(privativa) e chave assimétrica (pública).
+R.: a) Verdadeiro
+
+6. Uma cifra de encriptação que use a mesma chave para encriptar e decriptar é chamada de chave _____________.
+R.: a) Simétrica (privativa)
+
+7. _____________ atesta a identidade de uma entidade, seja o emissor, o computador do emissor, algum dispositivo ou alguma informação.
+R.: d) Autenticação
+
+8. Os dois tipos básicos de cifras são transposição e substituição
+R.: a) Verdadeiro
+
+9. Um(a) _________________ é usado(a) para detectar falsificações.
+R.: c) Valor de hash
+
+10. DES, IDEA, RC4 e WEP são exemplo de ________________.
+R.: d) Algoritmos (ou padrões) simétricos
+
+11. Uma assinatura _______________ é uma representação de uma assinatura física armazenada em um formato digital.
+R.: a) Digital

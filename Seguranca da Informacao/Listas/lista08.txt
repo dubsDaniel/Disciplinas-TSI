@@ -1,0 +1,28 @@
+Lista 8
+
+1. Qual dos seguintes é um exemplo de um nível de permissividade?
+R.: e) Todas as alternativas anteriores
+
+2. B Uma auditoria examina se os controles de segurança são apropriados, estão instalados corretamente e são/estão ___.
+R.: b) Cuidando de seu objetivo
+
+3. Uma ___ é um padrão usado para medir quão efetivo seu sistema é em relação a expectativas do setor.
+R.: c) Padrão de referência (benchmark)
+
+4. Atividades de pós-auditoria incluem qual das seguintes?
+R.: e) Todas as alternativas anteriores
+
+5. ___ é usado quando não é tão crítico detectar e responder a incidentes imediatamente.
+R.: a) Monitoramento que não seja em tempo real
+
+6. Uma plataforma comum para capturar e analisar entradas de histórico é
+R.: c) Informação de Segurança e Gerenciamento de Evento (SIEM - Security Information and Event Management)
+
+7. Em métodos _____, o IDS compara tráfego atual com padrões de atividade consistente com aqueles de uma intrusão de rede conhecida via casamento de padrão e casamento de estado.
+R.: a) Baseados em assinatura
+
+8. Isolamento de computador é o isolamento de redes internas e o estabelecimento de um(a) ____.
+R.: b) DMZ
+
+9. A análise do sistemas para descobrir o máximo possível sobre a organização, seus sistemas e redes é conhecida como ___.
+R.: d) Reconhecimento

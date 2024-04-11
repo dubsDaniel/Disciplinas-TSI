@@ -1,0 +1,20 @@
+1. Que organização de padrões foi formada em 1906 e trata de padrões para baterias?
+R.: a) IEC
+
+2. Que organização de padrões publica padrões como CGI, HTML e XML?
+R.: d) W3C
+
+3. A IETF focaliza principalmente padrões do conjunto de protocolos  TCP/IP  da Internet.
+
+4. A IETF produz documentos chamados de "RFC"
+
+5. Qual dos seguintes é o padrão ISO mais conhecido?
+R.: a) Modelo de referência OSI
+
+6. O  IEEE  é a maior associação profissional para o avanço de tecnologia do mundo.
+
+7. Que organização de padrões publica o padrão 802.11g?
+R.: d) IEEE
+
+8. Que organização de padrões publica o padrão americano de FORTRAN?
+R.: a) ANSI

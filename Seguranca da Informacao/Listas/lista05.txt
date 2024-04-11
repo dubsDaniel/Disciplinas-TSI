@@ -1,0 +1,35 @@
+1. O principal objetivo de um ciberataque é afetar uma ou mais ativos de TI.
+R.: a) Verdadeiro
+
+2. Qual dos seguintes descreve melhor a propriedade intelectual?
+R.: c) O conhecimento exclusivo que uma empresa possui
+
+3. Qual dos seguintes termos descreve melhor uma pessoa com muito pouca habilidade?
+R.: b) Script kiddie
+
+4. Um(a) é um software que captura tráfego enquanto ele atravessa uma rede.
+R.: Sniffer
+
+5. Qual tipo de ataque resulta em usuário legítimos sem acesso a um recurso de sistema?
+R.: a) DoS
+
+6. Um ataque de inundação de SYN inunda um alvo com pacotes de rede inválidos.
+R.: b) Falso
+
+7. Qual das seguintes medidas pode proteger melhor seu computador contra worms?
+R.: a) Instalar software antimalware
+
+8. Um ataque de dicionário é um ataque simples, que conta principalmente com usuários que escolhem senhas fracas.
+R.: a) Verdadeiro
+
+9. Qual tipo de ataque envolve capturar pacotes de dados de uma rede e retransmiti-los mais adiante para produzir um efeito não autorizado?
+R.: c) Retransmissão (replay)
+
+10. Um(a) é qualquer ação que possa danificar um ativo.
+R.: Ameaça
+
+11. Um(a) é qualquer falha que torne possível para uma ameaça causar danos a um computador ou uma rede.
+R.: Vulnerabilidade
+
+12. Qual tipo de malware é um programa autocontido que se replica e envia cópias de si mesmo para outros computadores, geralmente por uma rede?
+R.: b) Verme

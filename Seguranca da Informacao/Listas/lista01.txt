@@ -1,0 +1,39 @@
+1. Encriptar dados em dispositivos de armazenamento ou discos rígidos é uma estratégia principal para garantir integridade de dados.
+R.: B) Falso
+
+2. Organizações que exigem que representantes de atendimento a cliente acessem seus dados privados podem melhor proteger a
+	privacidade deles e facilitar acesso a outros dados de clientes usando qual dos seguintes controles de segurança?
+R.: b) Bloquear detalhes de dados privados de clientes e permitir acesso apenas aos quatro últimos dígitos dos números de identidade ou número de conta.
+
+3. Qual dos seguintes controles de segurança pode ajudar a reduzir anexos maliciosos de e-mail?
+R.: e) Todos os anteriores.
+(Filtragem e quarentena de e-mail
+Varredura de antivírus de anexo de e-mail.
+Comprovação com usuários sobre a confiabilidade da fonte de e-mail.
+Impedimento de toda mensagem de e-mail que chegue com anexos desconhecidos.)
+
+4. Encriptar comunicações por e-mail será necessário se você estiver enviando informações confidenciais em uma mensagem de e-mail por meio da Internet pública.
+R.: a) Verdadeiro
+
+5. Políticas, padrões, procedimentos e diretrizes de segurança ajudam as organizações a diminuir riscos e ameaças.
+R.: a) Verdadeiro
+
+6. Identifique o princípio (propriedade) de segurança da informação descrito:
+a) Disponibilidade - Propriedade que garante que a informação esteja sempre disponível
+	para o uso legítimo, ou seja, por aqueles usuários autorizados pelo proprietário da
+	informação.
+b) Integridade - Propriedade que garante que a informação manipulada mantenha todas as 
+	características originais estabelecidas pelo proprietário da informação, incluindo 
+	controle de mudanças e garantia do seu ciclo de vida (nascimento,manutenção e destruição).
+c) Confiabilidade - Propriedade que limita o acesso a informação tão somente às entidades
+	legítimas, ou seja, àquelas autorizadas pelo proprietário da informação.
+d) Irretratabilidade - Propriedade que garante a impossibilidade de negar a autoria em 
+	relação a uma transação anteriormente feita
+e) Autenticidade - Propriedade que garante que a informação é proveniente da fonte anunciada.
+
+7. Supondo que lhe foi dada a tarefa de desenvolver um sistema de e-commerce, como você poderia garantir a confidencialidade,
+	integridade e disponibilidade de seu sistema?
+R.: Quanto a confidencialidade, podemos considerar a autenticação do usuário, como um exemplo.
+	Quanto a integridade, podemos considerar a realização de backups, pois, é possível verificar com uma cópia que não foi modificada.
+	Já sobre a disponibilidade, podemos considerar a utilização de redundâncias, como por exemplo, usar diferentes provedoras de
+	 link de internet, servidores dedicados de terceiros.
