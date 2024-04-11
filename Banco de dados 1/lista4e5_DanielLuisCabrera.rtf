@@ -1,0 +1,259 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1046{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}{\f1\fnil\fcharset0 Courier New;}{\f2\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\f0\fs24\lang22 --Nome: Daniel Luis Cabrera - RA: 2096072\par
+
+\pard\sa200\sl276\slmult1 -----------PARTE 1 - Consultas Basicas\par
+--1- Liste os escrit\'f3rios com os seus objetivos (targets) e as vendas reais (sales).\par
+SELECT office, target, sales\par
+\tab FROM offices;\par
+-------------------------------------------------------\par
+--2 - Listar os nomes, escrit\'f3rios e datas de contrata\'e7\'e3o de todos os vendedores.\par
+SELECT name, office, hire_date \par
+\tab FROM salesreps, offices;\par
+-------------------------------------------------------\par
+--3 -  Quais s\'e3o o nome, a quota, e as vendas do empregado n\'famero 107?\par
+SELECT empl_num, name, quota, sales \par
+ \tab FROM salesreps\par
+ \tab\tab WHERE empl_num IN (107);\par
+-------------------------------------------------------\par
+--4 - Liste o nome e data de admiss\'e3o de qualquer pessoa com vendas acima de           R$ 300,000 (300 mil).\par
+SELECT name, hire_date\par
+\tab FROM salesreps\par
+\tab\tab WHERE sales < 300000;\par
+-------------------------------------------------------\par
+--5 - Liste a cidade, regi\'e3o e diferen\'e7a (acima/abaixo) entre vendas e alvo (targets) para cada escrit\'f3rio\par
+SELECT city, region, (sales - target) AS "Diferenca"\par
+\tab FROM OFFICES;\par
+-------------------------------------------------------\par
+--6 -  Mostrar o valor do invent\'e1rio para cada produto.\par
+SELECT mfr_id, product_id, description, (qty_on_hand * price)\par
+\tab FROM products;\par
+-------------------------------------------------------\par
+--7 - Mostre-me o resultado se eu aumentar a cota de cada vendedor em 3% de suas vendas.\par
+SELECT  ROUND ((0.03 * sales)+ QUOTA, 2)  \par
+\tab FROM salesreps;\par
+-------------------------------------------------------\par
+
+\pard --8 - Mostre-me todos os dados na tabela escrit\'f3rios (offices).\par
+SELECT * \par
+\tab FROM offices;\f1\fs22\lang1046\par
+
+\pard\sa200\sl276\slmult1\f0\fs24\lang22 -------------------------------------------------------\par
+--9 - Listar o atributo (n\'famero de funcion\'e1rio) de todos os gerentes de escrit\'f3rio de vendas (Sem duplicatas)\par
+SELECT DISTINCT mgr \par
+\tab FROM offices;\par
+-------------------------------------------------------\par
+--10 - Mostre-me os escrit\'f3rios onde as vendas ultrapassaram a meta.\par
+SELECT office \par
+\tab FROM offices\par
+\tab\tab WHERE sales > target;\par
+-------------------------------------------------------\par
+--11 - Mostre-me o nome, vendas e quota de empregado n\'famero 105.\par
+SELECT name, sales, quota \par
+\tab FROM salesreps \par
+\tab\tab WHERE empl_num IN (105);\par
+-------------------------------------------------------\par
+--12 - Encontrar o pessoal de vendas contratados antes de 2006.\par
+SELECT name \par
+\tab from salesreps \par
+\tab\tab where hire_date < '1-JAN-2006';\par
+-------------------------------------------------------\par
+--13 - Recuperar o nome e limite de cr\'e9dito do cliente n\'famero 2107\par
+SELECT company, credit_limit \par
+\tab FROM customers \par
+\tab\tab WHERE cust_num IN (2107);\par
+-------------------------------------------------------\par
+--14 - Encontrar as encomendas feitas no \'faltimo trimestre de 2007 (usar between).\par
+SELECT order_num \par
+\tab FROM orders \par
+\tab\tab WHERE order_date BETWEEN '2007-10-01' AND '2007-12-31';\par
+-------------------------------------------------------\par
+--15 - Liste os vendedores que trabalham em Nova York (11), Atlanta (13), ou Denver (22).\par
+\lang1046 SELECT name \par
+\tab FROM SALESREPS \par
+\tab\tab WHERE rep_office IN (11,13,22);\par
+\lang22 -------------------------------------------------------\par
+--16 - Exibir o limite de cr\'e9dito para empresa com um nome que combine com Smith (usar like).\par
+SELECT * \par
+\tab FROM customers\par
+\tab\tab WHERE company LIKE 'Smith%';\par
+-------------------------------------------------------\par
+--17 - Encontrar um vendedor ainda n\'e3o atribu\'eddo a um escrit\'f3rio (CUIDADO).\par
+SELECT name, rep_office \par
+\tab FROM salesreps \par
+\tab\tab WHERE rep_office is null;\par
+-------------------------------------------------------\par
+--18 - Encontrar vendedores que est\'e3o abaixo da quota e com vendas abaixo de $ 300,000.\par
+SELECT name, sales \par
+\tab FROM salesreps WHERE (quota > sales) \par
+\tab\tab AND sales < 300000;\par
+-------------------------------------------------------\par
+--19 - Liste os escrit\'f3rios, classificados em ordem decrescente pelo desempenho de vendas, de modo que os escrit\'f3rios com o melhor desempenho apare\'e7am em primeiro lugar.\par
+SELECT office, sales  \par
+\tab FROM  offices \par
+\tab\tab ORDER BY sales DESC;\par
+-------------------------------------------------------\par
+--20 -  Listar todos os produtos cujo o pre\'e7o for superior a $ 2000 ou onde mais de $ 30000 do produto foi pedido em um \'fanico pedido.\par
+SELECT product, amount\par
+\tab FROM orders\par
+\tab\tab WHERE (amount / qty > 2000) OR  (amount > 30000);\par
+-------------------------------------------------------\par
+--21 - Quais s\'e3o as quotas totais e vendas totais para todos os vendedores?\par
+SELECT quota, sales \par
+\tab FROM salesreps;\par
+-------------------------------------------------------\par
+--22 - Calcule o pre\'e7o m\'e9dio dos produtos do fabricante ACI\par
+SELECT ROUND(AVG (price), 2) AS "Preco Medio"\par
+\tab FROM products\par
+\tab\tab WHERE mfr_id LIKE 'ACI%';\par
+-------------------------------------------------------\par
+--23 - Qual a data do pedido mais antigo no banco de dados?\par
+SELECT MIN (order_date) AS "Data mais antiga"\par
+\tab  FROM orders;\par
+-------------------------------------------------------\par
+--24 -  Quantos vendedores est\'e3o acima da cota?\par
+SELECT COUNT(name) AS "Quantidade Vendedores" \par
+\tab FROM salesreps WHERE sales > quota;\par
+-------------------------------------------------------\par
+--25 - Quantos clientes diferentes s\'e3o atendidos por cada vendedor?\par
+SELECT DISTINCT cust_rep, COUNT(cust_rep) AS "Clientes que atendem" \par
+\tab FROM customers GROUP BY cust_rep;\par
+-------------------------------------------------------\par
+--26 - Calcule o valor total dos pedidos para cada cliente de cada vendedor.\par
+SELECT cust, rep,  SUM(amount) \par
+\tab FROM orders  \par
+\tab\tab GROUP BY cust, rep  \par
+\tab\tab\tab ORDER BY rep;\par
+-------------------------------------------------------\par
+--27 - Qual \'e9 o total m\'e9dio de pedidos para cada vendedor cujos pedidos totalizam de mais de R$ 30000?\par
+SELECT rep, ROUND(AVG (amount), 2)\par
+\tab FROM orders WHERE amount > 30000 GROUP BY rep;\par
+-------------------------------------------------------\par
+--28 - Para cada escrit\'f3rio com duas ou mais pessoas, calcular as quotas e o total de vendas para todos os vendedores que trabalham no escrit\'f3rio.\par
+SELECT rep_office, SUM(quota), SUM(sales)\par
+\tab FROM salesreps GROUP BY rep_office \par
+\tab\tab HAVING COUNT (rep_office) >= 2;\par
+-------------------------------------------------------\par
+----------PARTE 2 - Subconsultas\par
+--1 - Liste o vendedor cuja meta \'e9 inferior a 10 por cento da meta total da empresa.\par
+SELECT name AS "quota insuficiente"\par
+\tab FROM SALESREPS\par
+\tab  \tab WHERE quota < (SELECT SUM(TARGET) * 0.1 FROM offices);\par
+-------------------------------------------------------\par
+--2 - Liste os escrit\'f3rios onde a meta de vendas para o escrit\'f3rio excede a soma das quotas dos vendedores.\par
+SELECT office \par
+\tab FROM offices\par
+\tab\tab WHERE target > (SELECT SUM(quota) FROM salesreps WHERE rep_office = office);\par
+-------------------------------------------------------\par
+--3 - Liste todos os clientes atendidos por Bill Adams.\par
+SELECT company, cust_num, cust_rep\par
+\tab FROM customers\par
+\tab\tab  WHERE cust_rep = (SELECT empl_num FROM salesreps WHERE name = 'Bill Adams');\par
+-------------------------------------------------------\par
+--4 - Liste todos os produtos do fabricante ACI onde a quantidade dispon\'edvel est\'e1 acima da quantidade dispon\'edvel de produto ACI-41004.\par
+SELECT * FROM products \par
+\tab\tab WHERE mfr_id = 'ACI' AND qty_on_hand > \par
+\tab\tab\tab (SELECT qty_on_hand FROM products \par
+\tab\tab\tab\tab WHERE mfr_id = 'ACI' AND product_id = '41004');\par
+-------------------------------------------------------\par
+-- 5 - Liste as vendas das pessoas que n\'e3o trabalham em escrit\'f3rios gerenciados por Larry Fitch.\par
+SELECT name, sales\par
+\tab FROM salesreps \par
+\tab\tab WHERE rep_office NOT IN (SELECT office FROM offices \par
+\tab\tab\tab WHERE mgr = (SELECT empl_num FROM salesreps WHERE name = 'Larry Fitch'));\par
+-------------------------------------------------------\par
+--6 - Liste todos os clientes atribu\'eddos a Sue Smith que ainda n\'e3o fizeram uma encomenda de mais de R$ 3000.\par
+SELECT amount, cust \par
+\tab FROM orders WHERE rep = 102 AND cust NOT IN \par
+\tab\tab (SELECT cust FROM  orders WHERE amount > 3000);\par
+-------------------------------------------------------\par
+--7 - Liste as os vendedores que tomaram um pedido que representa mais de 10 por cento da sua quota (usar o operador any).\par
+SELECT rep \par
+\tab FROM orders \par
+\tab\tab WHERE amount > ANY  \par
+\tab\tab (SELECT quota * 0.1 FROM salesreps where empl_num = rep);  \par
+-------------------------------------------------------\par
+--8 -  Liste os escrit\'f3rios e os seus alvos onde todos os vendedores t\'eam vendas que excedem 50% (por cento) do -alvo do escrit\'f3rio (usar o operador all).\par
+SELECT office, target\par
+\tab FROM offices \par
+\tab\tab WHERE target * 0.5 < ALL \par
+\tab\tab (SELECT sales FROM salesreps WHERE rep_office = office);\par
+-------------------------------------------------------\par
+ --9 - Listar os clientes cujos vendedores s\'e3o atribu\'eddos a escrit\'f3rios na regi\'e3o de vendas do Leste.\par
+SELECT cust_num \par
+\tab FROM customers WHERE cust_rep IN \par
+\tab\tab (SELECT empl_num FROM salesreps WHERE  rep_office in \par
+\tab\tab (SELECT office FROM offices WHERE region = 'Eastern'));\par
+-------------------------------------------------------\par
+--10 - Listar os gerentes que tem mais de 40 anos e que gerem um vendedor que est\'e1 acima da cota e que n\'e3o trabalha no mesmo escrit\'f3rio de vendas como o gerente.\par
+SELECT mgr \par
+\tab FROM offices WHERE mgr IN \par
+\tab (SELECT manager FROM salesreps WHERE sales > quota AND office <> rep_office) \par
+\tab\tab AND mgr IN (SELECT empl_num FROM salesreps WHERE age > 40);\par
+-------------------------------------------------------\par
+--11 -  Liste os vendedores cujo tamanho m\'e9dio de pedidos para os produtos fabricados por ACI \'e9 maior do que o tamanho de pedido m\'e9dio global.\par
+SELECT rep\par
+\tab FROM orders \par
+\tab\tab WHERE mfr = 'ACI' GROUP BY rep HAVING avg(amount) > (SELECT avg(amount) FROM orders); \par
+-------------------------------------------------------\par
+--12 - Liste os vendedores cuja tamanho m\'e9dio de pedidos para os produtos fabricados pela ACI \'e9 pelo menos t\'e3o grande quanto o tamanho m\'e9dio de seus pedidos.\par
+SELECT rep\par
+\tab FROM orders\par
+\tab\tab WHERE mfr = 'ACI' GROUP BY rep \par
+\tab\tab HAVING avg(amount) > (SELECT avg(amount) FROM orders AS med WHERE rep = med.rep);\par
+-------------------------------------------------------\par
+----------PARTE 3 - Joins\par
+--1 - Liste cada vendedor, cidade e regi\'e3o onde trabalham.\par
+SELECT name, city, region\par
+\tab FROM offices, salesreps \par
+\tab\tab WHERE rep_office = office;\par
+-------------------------------------------------------\par
+--2 - Liste os escrit\'f3rios com um target maior que $ 600000 e as informa\'e7\'f5es do seu gerente.\par
+SELECT office, mgr, age, hire_date\par
+\tab FROM offices, salesreps\par
+\tab\tab WHERE target > 600000 AND mgr = empl_num;\par
+-------------------------------------------------------\par
+--3 - A tabela ORDERS e a tabela Products est\'e3o relacionadas por um chave estrangeira composta. Liste todas os pedidos, mostrando valores e descri\'e7\'f5es do produto.\par
+SELECT amount, description, price    \par
+\tab FROM orders, products\par
+\tab\tab WHERE mfr_id = mfr AND product_id = product;\par
+-------------------------------------------------------\par
+--4 - Liste os pedidos acima de $ 25.000, incluindo o nome do vendedor que tomou o pedido e o nome do o cliente que fez o pedido.\par
+SELECT name, product, company\par
+\tab FROM orders, salesreps, customers\par
+\tab WHERE amount > 25000 AND empl_num = rep AND cust_num = cust;\par
+-------------------------------------------------------\par
+--5 - Liste todas as combina\'e7\'f5es de vendedores e escrit\'f3rios onde a quota vendedores \'e9 mais do que o target de vendas do escrit\'f3rio , independentemente se o vendedor trabalha l\'e1.\par
+SELECT empl_num, office \par
+\tab FROM salesreps\par
+\tab JOIN offices ON rep_office <> office OR rep_office = office\par
+\tab\tab WHERE quota > target;\par
+-------------------------------------------------------\par
+--6 - Listar os nomes dos vendedores e seus gerentes.\par
+SELECT vendedor.name, gerente.name\par
+\tab FROM  salesreps AS vendedor, salesreps as gerente\par
+\tab\tab WHERE vendedor.empl_num = gerente.manager;\par
+-------------------------------------------------------\par
+--7 - Listar os vendedores que trabalham em escrit\'f3rios diferentes do que seu gerente, mostrando o nome e escrit\'f3rio onde cada um trabalha.\par
+SELECT saler.name, manager.name, saler.rep_office, manager.rep_office\par
+\tab FROM  salesreps AS saler, salesreps AS manager\par
+\tab\tab WHERE saler.empl_num = manager.manager AND saler.rep_office <> manager.rep_office;\par
+-------------------------------------------------------\par
+--8 - Liste os vendedores e as cidades onde trabalham. Apresentar vendedores que n\'e3o foram assinalados com cidades ainda.\par
+SELECT name, city\par
+\tab FROM  offices FULL JOIN salesreps\par
+\tab\tab ON rep_office = office;\par
+-------------------------------------------------------\par
+--Nome: Daniel Luis Cabrera - RA: 2096072\par
+-----PARTE 3.1 - Complementar sobre Joins\par
+--1 -  Liste os meninos e meninas na mesma cidade, incluindo as meninas e meninos que n\'e3o tem correspond\'eancias.\par
+SELECT boys.name, girls.name\par
+\tab FROM boys FULL JOIN girls\par
+\tab ON boys.city = girls.city;\par
+-------------------------------------------------------\par
+--2 - Liste os meninos e meninas na mesma cidade, incluindo as meninas n\'e3o correspondidas.\par
+SELECT boys.name, girls.name\par
+\tab FROM boys RIGHT JOIN girls\par
+\tab ON boys.city = girls.city;\f2\fs22\par
+}
+ 
