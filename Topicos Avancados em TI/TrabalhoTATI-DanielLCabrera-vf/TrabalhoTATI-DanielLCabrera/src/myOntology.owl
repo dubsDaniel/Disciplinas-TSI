@@ -1,0 +1,128 @@
+[ {
+  "@id" : "https://schema.org/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "localhost:8080/clientes" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "instancia linkando classe do schema.org/Person"
+  } ]
+}, {
+  "@id" : "localhost:8080/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "Essa é a minha ontologia, precisei fazer para um trabalho da materia \"Tópicos avançados em técnologia da informação\" da faculdade UTFPR.\nEsta ontologia foi feita para atender os itens do trabalho 2, usando nossa aplicação REST de sistema bancário do trabalho 1.\n\nA ontologia buscar dar um significado a classe do cliente, utilizando a classe Person do schema.org, além de dar uma semântica as demais classes.\nOs \"object properties\", trazem os predicados, que faz a linkagem de dados, dando um melhor entendimento desses dados.\nJá os \"data properties\", trazem os objetos, que informa o tipe de cada dado \"literal\" que esteja descrito em nossos recursos.\n\nEspero que tenha sido claro na explicação do objetivo e nos detalhes da ontologia.\n\nObrigado pela atenção! =D"
+  } ]
+}, {
+  "@id" : "localhost:8080/cartoes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "localhost:8080/servicos"
+  } ]
+}, {
+  "@id" : "localhost:8080/cartoes/valor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "objeto com intuito de melhorar a semântica dando significado literal ao valor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ]
+}, {
+  "@id" : "localhost:8080/cartoes/vencimento",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "objeto com intuito de melhorar a semântica dando significado literal ao vencimento"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  } ]
+}, {
+  "@id" : "localhost:8080/clientes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "classe cliente é do tipo pessoa, onde está linkada a ontologia públic schema.org/Person"
+  } ]
+}, {
+  "@id" : "localhost:8080/clientes/cpf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "objeto com intuito de melhorar a semântica dando significado literal ao cpf, que tem como restrição a classe cliente"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "localhost:8080/clientes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "localhost:8080/contas",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "classe representando as contas do sistema"
+  } ]
+}, {
+  "@id" : "localhost:8080/contas/renda",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "objeto com intuito de melhorar a semântica dando significado literal a renda"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ]
+}, {
+  "@id" : "localhost:8080/emprestimos",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "localhost:8080/servicos"
+  } ]
+}, {
+  "@id" : "localhost:8080/limite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "objeto com intuito de melhorar a semântica dando significado literal ao limite"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#double"
+  } ]
+}, {
+  "@id" : "localhost:8080/pagamento",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "predicado linkado as classes/subclasses de servicos"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "localhost:8080/servicos"
+  } ]
+}, {
+  "@id" : "localhost:8080/pegarCredito",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "predicado linkado as classes/subclasses de servicos"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "localhost:8080/servicos"
+  } ]
+}, {
+  "@id" : "localhost:8080/possui",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "Predicado com intuito de linkagem, onde não está restrito as classes atualmente descritas, em caso de possível atualização que seja incluido mais classes, não será necessário alterar a ontologia, pois, ela foi deixada sem restrição de classes"
+  } ]
+}, {
+  "@id" : "localhost:8080/servicos",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "pt",
+    "@value" : "classe que define os serviços prestados pelo sistema bancário"
+  } ]
+} ]
