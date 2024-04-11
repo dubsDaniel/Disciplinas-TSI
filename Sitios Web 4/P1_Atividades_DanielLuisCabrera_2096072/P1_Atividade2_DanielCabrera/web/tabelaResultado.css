@@ -1,0 +1,28 @@
+/* 
+    Created on : 9 de abr. de 2023, 01:13:45
+    Author     : dudbub
+    Tentativa de melhorar o visual da tabela de resultados das provas
+*/
+
+.tabelaResultados {
+    float: left;
+    display: block;
+    border: 1px solid; 
+    justify-content: space-between;
+}
+
+.tabelaResultados th, td {
+    border-collapse: collapse;
+    border: 1px solid; 
+}
+
+.tabelaResultados th {
+    background-color: #F2F2F2;
+}
+
+.novaProva form {
+    clear: both;
+    float: left;
+    display: inline-block;
+    margin-top: 10px;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Resultado da sua prova</title>
+        <link rel="stylesheet" href="tabelaResultado.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Prova de tabuada online</h2>
+        <h2>Resultado</h2>
+        <div class="tabelaResultados">
+            <h:dataTable value="#{provasBean.listaProvas}" var="tabela"><!-- Tabela com todos os usuários -->
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Matricula"/>
+                    </f:facet>
+                    <h:outputText value="#{tabela.numeorMatricul}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nome"/>
+                    </f:facet>
+                    <h:outputText value="#{tabela.nomeAluno}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nota"/>
+                    </f:facet>
+                    <h:outputText value="#{tabela.nota}"/>
+                </h:column>
+            </h:dataTable>
+        </div>
+        <div class="novaProva">
+            <h:form>
+                <h:commandButton value="Nova Prova" action="#{provasBean.novaProva()}"/><!-- Próxima prova -->
+            </h:form>
+        </div>
+    </body>
+</html>

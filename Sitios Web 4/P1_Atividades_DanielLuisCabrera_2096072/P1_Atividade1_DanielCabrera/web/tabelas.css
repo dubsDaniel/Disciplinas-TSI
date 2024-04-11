@@ -1,0 +1,34 @@
+/* 
+    Created on : 8 de abr. de 2023, 17:44:41
+    Author     : dudbub
+    Tentativa de melhorar o visual das tabelas
+*/
+.tabelasAlunos table { 
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    border: 1px solid; 
+} 
+
+
+
+.tabelasAlunos th, td {
+    
+    border-collapse: collapse;
+}
+
+
+.tabelaNomes {
+    display: flex;
+}
+
+.Aprovados tr:nth-child(even){
+    background-color: #88FF88
+}
+
+.Reprovados tr:nth-child(even){
+    background-color: #FF8888
+}
+
+

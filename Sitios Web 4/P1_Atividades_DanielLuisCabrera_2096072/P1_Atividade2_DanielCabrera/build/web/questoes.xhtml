@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      <h:head>
+        <title>Prova iniciada</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!--<link rel="zeraProva" href="zeraProva.js"/>
+         Chamando o arquivo js que identifica quando o usuário fecha o browser, não consegui fazer funcionar a tempo -->
+      </h:head>
+    <h:body>
+        <h2>Prova de tabuada online<br/><br/>
+            Questão <h:outputText value="#{provasBean.questao.id}"/> de 20:<br/></h2><!-- Mostra o número pela id  da questão -->
+        <h:form>
+            <h3><h:outputText value="#{provasBean.questao.var1}"/> X <!-- Variável aleatória 1 -->
+                <h:outputText value="#{provasBean.questao.var2}"/> =  <!-- Variável aleatória 2 -->
+            <h:inputText  value="#{provasBean.questao.resultado}" required="true"/> <!-- Coleta resultado -->
+            <h:commandButton value="Responder" action="#{provasBean.verificaResultado}" rendered="#{provasBean.questao.id != 20}"/><!-- Função de verificação-->
+            <h:commandButton value="Responder" action="#{provasBean.finalizarProva()}" rendered="#{provasBean.questao.id == 20}"/></h3><!-- Função de encerrar prova-->
+            <h5>Cada questão vale 0.5 pontos</h5><br/><!-- informativo pro usuário -->
+        </h:form><br/>
+        <c:if test="${not empty msgErro}"> <!-- Caso de erro, informe o usuário -->
+            <p style="color: red">${msgErro}</p>
+        </c:if>
+    </h:body>
+</html>
+
