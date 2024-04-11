@@ -1,0 +1,115 @@
+CREATE TABLE fornecedores 
+(id_fornecedor INT NOT NULL, 
+nome VARCHAR(50) NOT NULL, 
+endereco VARCHAR(50) NOT NULL, 
+cidade VARCHAR(50) NOT NULL, 
+telefone VARCHAR(50) NOT NULL,
+PRIMARY KEY (id_fornecedor)
+);
+ 
+CREATE TABLE produtos
+(id_produto INT NOT NULL,
+fornecedor INT NOT NULL,
+descricao VARCHAR(50) NOT NULL,
+valor FLOAT NOT NULL,
+PRIMARY KEY (id_produto),
+FOREIGN KEY (fornecedor) REFERENCES fornecedores(id_fornecedor)
+);
+
+CREATE TABLE posicao
+(num_posicao VARCHAR(8) NOT NULL,
+PRIMARY KEY (num_posicao)
+);
+-- 01-01-01 
+
+CREATE TABLE ordem
+(codigo_lote INT NOT NULL,
+nome VARCHAR(50) NOT NULL,
+PRIMARY KEY (codigo_lote)
+);
+
+CREATE TABLE maquinas
+(id_maquina INT NOT NULL,
+fornecedor INT NOT NULL,
+descricao VARCHAR(50),
+status VARCHAR(50),
+PRIMARY KEY (id_maquina),
+FOREIGN KEY (fornecedor) REFERENCES fornecedores (id_fornecedor)
+);
+
+CREATE TABLE coletores
+(id_coletor INT NOT NULL,
+fornecedor INT NOT NULL,
+descricao VARCHAR(50) NOT NULL,
+status VARCHAR(50) NOT NULL,
+PRIMARY KEY (id_coletor),
+FOREIGN KEY (fornecedor) REFERENCES fornecedores (id_fornecedor)
+);
+
+CREATE TABLE funcionario
+(id_funcionario INT NOT NULL,
+nome VARCHAR(50) NOT NULL,
+PRIMARY KEY (id_funcionario)
+);
+
+CREATE TABLE operador
+(id_operador INT NOT NULL,
+funcionario INT NOT NULL,
+maquina INT NOT NULL,
+coletor INT NOT NULL,
+PRIMARY KEY (id_operador),
+FOREIGN KEY (funcionario) REFERENCES funcionario (id_funcionario),
+FOREIGN KEY (maquina) REFERENCES maquinas (id_maquina),
+FOREIGN KEY (coletor) REFERENCES coletores (id_coletor)
+);
+
+CREATE TABLE entrada
+(un_deposito INT NOT NULL,
+produto INT NOT NULL,
+funcionario INT NOT NULL,
+data DATE NOT NULL,
+PRIMARY KEY (un_deposito),
+FOREIGN KEY (produto) REFERENCES produtos(id_produto),
+FOREIGN KEY (funcionario) REFERENCES funcionario(id_funcionario)
+);
+
+CREATE TABLE amostragem
+(codigo_analise INT NOT NULL,
+deposito INT NOT NULL,
+produto INT NOT NULL,
+funcionario INT NOT NULL,
+data DATE NOT NULL,
+PRIMARY KEY (codigo_analise),
+FOREIGN KEY (produto) REFERENCES produtos(id_produto),
+FOREIGN KEY (funcionario) REFERENCES funcionario(id_funcionario),
+FOREIGN KEY (deposito) REFERENCES entrada(un_deposito)
+);
+
+CREATE TABLE armazenado
+(analise INT NOT NULL,
+deposito INT NOT NULL,
+produto INT NOT NULL,
+operador INT NOT NULL,
+fornecedor INT NOT NULL,
+posicao VARCHAR(8) NOT NULL,
+data DATE NOT NULL,
+FOREIGN KEY (analise) REFERENCES amostragem(codigo_analise),
+FOREIGN KEY (produto) REFERENCES produtos(id_produto),
+FOREIGN KEY (operador) REFERENCES operador(id_operador),
+FOREIGN KEY (deposito) REFERENCES entrada(un_deposito),
+FOREIGN KEY (fornecedor) REFERENCES fornecedores(id_fornecedor) 
+);
+
+CREATE TABLE saida
+(operador INT NOT NULL,
+produto INT NOT NULL,
+posicao VARCHAR(8) NOT NULL,
+deposito INT NOT NULL,
+lote INT NOT NULL,
+data DATE NOT NULL,
+FOREIGN KEY (operador) REFERENCES operador(id_operador),
+FOREIGN KEY (produto) REFERENCES produtos(id_produto),
+FOREIGN KEY (posicao) REFERENCES posicao(num_posicao),
+FOREIGN KEY (deposito) REFERENCES entrada(un_deposito),
+FOREIGN KEY (lote) REFERENCES ordem(codigo_lote) 
+);
