@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agendamento de Equipes</title>
+        <style>
+            .centralizar {
+                display: flex;
+                align-items: center;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding: 4%">
+        <script>
+            //<![CDATA[
+            function dateTemplateFunc(date) {
+                return '<span style="background-color:' + ((date.day < 21 && date.day > 10) ? '#81C784' : 'inherit') + ';border-radius:50%;width: 2.5rem;height: 2.5rem;line-height: 2.5rem;display: flex;align-items: center;justify-content: center;">' + date.day + '</span>';
+            }
+
+            //]]>
+        </script>
+        <div class="centralizar">
+            <h:form id="form">
+                <h2>Agendamento de Equipes</h2>
+                <p:outputLabel value="Tipo de serviço: "/>
+                <p:selectOneMenu value="#{buscaBean.servicoSelecionado}"
+                                 converter="#{servicoConverter}"
+                                 required="true">
+                    <f:selectItems value="#{aplicacao.itensServicos}"/>
+                    <p:ajax event="change" listener="#{buscaBean.agenda}" immediate="true" update="cbEquipes, tabela"/>
+                </p:selectOneMenu>
+                <br/>
+                <p:outputLabel value="Equipe: "/>
+                <p:selectOneMenu id="cbEquipes"
+                                 value="#{buscaBean.equipeSelecionada}"
+                                 converter="#{equipeConverter}"
+                                 required="true">
+                    <f:selectItems value="#{buscaBean.itensEquipe}"/>
+                    <p:ajax event="change" listener="#{buscaBean.filtrar()}" update="tabela, responsavelEquipe, valorPeriodo"/>
+
+                </p:selectOneMenu>
+                <br/>
+                <p:outputLabel value="Responsável: "/><p:outputLabel id="responsavelEquipe" value="#{buscaBean.equipeSelecionada.responsavel}"/><br/>
+                <p:outputLabel value="Valor do período: R$ "/><p:outputLabel id="valorPeriodo" value="#{buscaBean.equipeSelecionada.valorPeriodo}" /><br/>
+                <div class="card">
+                    <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true">
+                        <p:autoUpdate/>
+                    </p:growl>
+                    <div class="field col-12 md:col-4">
+                        <p:outputLabel for="disabledDD" value="Data: "/>
+                        <p:datePicker id="disabledDD" value="#{buscaBean.date}"
+                                      disabledDays="#{buscaBean.invalidDays}"
+                                      disabledDates="#{buscaBean.invalidDates}"
+                                      mindate="#{buscaBean.minDate}"
+                                      maxdate="#{buscaBean.maxDate}" readonlyInput="true" required="true">
+                            <p:ajax event="dateSelect" listener="#{buscaBean.dataSelecionada}" update="msgs, :tabela"/>
+                        </p:datePicker>
+                    </div>
+                    <p:outputLabel value="Período: "><p:selectOneRadio id="radioPeriodoDia" value="#{buscaBean.periodo}" required="true">
+                                                        <f:selectItem itemValue="#{'D'}" itemLabel="Manhã" />
+                                                        <f:selectItem itemValue="#{'T'}" itemLabel="Tarde"/>
+                                                        <f:selectItem itemValue="#{'I'}" itemLabel="Dia Inteiro"/>
+                                                        <p:ajax event="click" listener="#{buscaBean.atualizaValorTotal}" update="valorTotal"/>
+                                                    </p:selectOneRadio>
+                    </p:outputLabel>
+                    <p:outputLabel value="Total do serviço: R$ "/>
+                    <p:outputLabel id="valorTotal" value="#{buscaBean.valorTotal}"/><br/>
+                </div>
+                <br/>
+                <p:outputLabel value="Contratante: "/><p:inputText value="#{buscaBean.contratante}" size="30" required="true"/><br/>
+                <p:outputLabel value="Telefone Contato: "/><p:inputText value="#{buscaBean.telefone}" size="11" maxlength="11" required="true"/>
+                <small class="block">Informar apenas os 11 dígitos, por favor</small><br/>
+                <p:outputLabel value="Email: "/><p:inputText value="#{buscaBean.email}" size="50" required="true"/><br/>
+                <p:outputLabel value="Endereço do serviço: "/><p:inputText value="#{buscaBean.endereco}" size="70" required="true"/><br/>
+                <p:commandButton value="Confirmar" action="#{buscaBean.inserir}" ajax="false" update="tabela"/><p:commandButton value="Limpar campos" action="#{buscaBean.limpaPreenchidos}" update="form" process="@this"/>
+                <p:dataTable id="tabela" value="#{buscaBean.agenda}" var="agenda">
+                    <p:column headerText="Tipo de Serviço">
+                        <p:outputLabel value="#{agenda.servico.desc}"/>
+                    </p:column>
+                    <p:column headerText="Equipe">
+                        <p:outputLabel value="#{agenda.equipe.desc}"/>
+                    </p:column>
+                    <p:column headerText="Responsável">
+                        <p:outputLabel value="#{agenda.responsavel}"/>
+                    </p:column>
+                    <p:column headerText="Data">
+                        <p:outputLabel value="#{agenda.data}"/>
+                    </p:column>
+                    <p:column headerText="Período">
+                        <p:outputLabel value="#{agenda.periodo}"/>
+                    </p:column>
+                    <p:column headerText="Cliente">
+                        <p:outputLabel value="#{agenda.contratante}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </div>
+    </h:body>
+</html>
